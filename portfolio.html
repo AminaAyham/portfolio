@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amina A - Web Developer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+            color: white;
+            padding: 100px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.4;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .profile-image-container {
+            position: relative;
+        }
+
+        .profile-image-container::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: linear-gradient(45deg, #06b6d4, #3b82f6);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .profile-image {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-text {
+            text-align: left;
+            max-width: 500px;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .title-line {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            opacity: 0.95;
+            font-weight: 500;
+            min-height: 1.5em;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            transition: all 0.3s;
+            font-size: 0.95em;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-links a:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav li {
+            margin: 5px 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1e3a8a;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1.05em;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+            transition: width 0.3s;
+        }
+
+        nav a:hover {
+            color: #3b82f6;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        section {
+            margin-bottom: 100px;
+            scroll-margin-top: 80px;
+        }
+
+        h2 {
+            font-size: 2.8em;
+            margin-bottom: 50px;
+            color: #1e3a8a;
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+            font-weight: 700;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+            border-radius: 2px;
+        }
+
+        .summary {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            font-size: 1.2em;
+            line-height: 1.9;
+            max-width: 900px;
+            margin: 0 auto;
+            border-left: 5px solid #3b82f6;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-top: 4px solid #3b82f6;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px rgba(59, 130, 246, 0.2);
+        }
+
+        .skill-category h3 {
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            color: #4a5568;
+            font-size: 1.05em;
+            transition: all 0.2s;
+        }
+
+        .skill-category li:hover {
+            color: #3b82f6;
+            padding-left: 10px;
+        }
+
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-left: 5px solid #3b82f6;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px rgba(59, 130, 246, 0.2);
+        }
+
+        .project-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 10px;
+            font-size: 1.6em;
+            font-weight: 700;
+        }
+
+        .project-year {
+            color: #06b6d4;
+            font-size: 0.95em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .tech-tag {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            color: #1e3a8a;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 700;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .project-card ul {
+            margin-top: 20px;
+            padding-left: 20px;
+            color: #4a5568;
+        }
+
+        .project-card li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .education-timeline {
+            max-width: 850px;
+            margin: 50px auto;
+        }
+
+        .education-item {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            border-left: 6px solid #3b82f6;
+            transition: all 0.3s;
+        }
+
+        .education-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 50px rgba(59, 130, 246, 0.2);
+        }
+
+        .education-item h3 {
+            color: #1e3a8a;
+            font-size: 1.5em;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .education-item p {
+            color: #4a5568;
+            margin: 8px 0;
+            font-size: 1.05em;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .cert-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.3s;
+            border-top: 4px solid #3b82f6;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px rgba(59, 130, 246, 0.2);
+        }
+
+        .cert-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+            font-weight: 700;
+        }
+
+        .cert-card p {
+            color: #4a5568;
+            font-size: 1em;
+            margin: 5px 0;
+        }
+
+        .soft-skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .soft-skill-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 1.1em;
+            cursor: default;
+        }
+
+        .soft-skill-item:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+            color: white;
+            box-shadow: 0 15px 50px rgba(59, 130, 246, 0.3);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 80px;
+        }
+
+        footer h3 {
+            font-size: 2em;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        footer p {
+            margin: 12px 0;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        footer a {
+            color: #06b6d4;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #3b82f6;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            .title-line {
+                font-size: 1.2em;
+            }
+
+            .profile-section {
+                flex-direction: column;
+            }
+
+            .profile-text {
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 180px;
+                height: 180px;
+            }
+
+            h2 {
+                font-size: 2.2em;
+            }
+
+            .projects-grid,
+            .skills-grid,
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .summary {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="profile-section">
+                <div class="profile-image-container">
+                    <img src="image.jpg" alt="Amina A" class="profile-image" id="profileImage">
+                </div>
+                <div class="profile-text">
+                    <h1>AMINA A</h1>
+                    <p class="title-line">MCA Graduate | Web Developer</p>
+                    <p class="subtitle">Python & Django Enthusiast | Building Responsive Web Applications</p>
+                </div>
+            </div>
+            <div class="contact-links">
+                <a href="mailto:aminamhrasy@gmail.com">📧 Email</a>
+                <a href="https://www.linkedin.com/in/aminaa4722" target="_blank">💼 LinkedIn</a>
+                <a href="https://github.com/AminaAyham" target="_blank">💻 GitHub</a>
+                <a href="tel:8606775158">📱 Call Me</a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <h2>Professional Summary</h2>
+            <div class="summary">
+                Motivated and detail-oriented MCA graduate with strong foundations in web development and programming. Experienced in Python, Django, Java, and SQL through academic projects and self-learning. Passionate about designing responsive web applications, continuously improving technical skills and teaching others technical concepts. Seeking a Web Developer or Software Developer role to contribute to innovative development teams.
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Web Development</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Django</li>
+                        <li>HTML & CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C</li>
+                        <li>C++</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Databases</h3>
+                    <ul>
+                        <li>MySQL</li>
+                        <li>SQLite</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Frameworks</h3>
+                    <ul>
+                        <li>Git</li>
+                        <li>Bootstrap</li>
+                        <li>VS Code</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Child Care Management System</h3>
+                    <p class="project-year">2025</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">SQLite</span>
+                        <span class="tech-tag">HTML/CSS</span>
+                    </div>
+                    <ul>
+                        <li>Developed and deployed a web application for tracking child vaccinations and developmental milestones</li>
+                        <li>Implemented online telehealth conference and environmental study features</li>
+                        <li>Designed dynamic user interfaces using HTML/CSS</li>
+                        <li>Integrated email alert system for vaccination reminders using Django's mail framework</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <h3>Public Utility Civil Registry System</h3>
+                    <p class="project-year">2017</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">HTML/CSS</span>
+                    </div>
+                    <ul>
+                        <li>Built a comprehensive registry platform to manage birth, death, and marriage records</li>
+                        <li>Implemented secure database management for sensitive public records</li>
+                        <li>Created user-friendly interfaces for data entry and retrieval</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Academic Background</h2>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <h3>Master of Computer Applications (MCA)</h3>
+                    <p><strong>University of Kerala</strong></p>
+                    <p>2025 | 65%</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>Bachelor of Computer Applications (BCA)</h3>
+                    <p><strong>University of Kerala</strong></p>
+                    <p>2017 | 63.4%</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>Higher Secondary Education (Computer Science)</h3>
+                    <p><strong>Government of Kerala</strong></p>
+                    <p>2014 | 60%</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Professional Certifications</h2>
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <h3>C++ Fundamentals</h3>
+                    <p>Infosys Springboard</p>
+                    <p><em>December 2023</em></p>
+                </div>
+
+                <div class="cert-card">
+                    <h3>HTML Advanced</h3>
+                    <p>Infosys Springboard</p>
+                    <p><em>December 2023</em></p>
+                </div>
+
+                <div class="cert-card">
+                    <h3>Learn Java to Master</h3>
+                    <p>Udemy</p>
+                    <p><em>March 2024</em></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="soft-skills">
+            <h2>Core Competencies</h2>
+            <div class="soft-skills-grid">
+                <div class="soft-skill-item">Teamwork</div>
+                <div class="soft-skill-item">Critical Thinking</div>
+                <div class="soft-skill-item">Teaching & Mentoring</div>
+                <div class="soft-skill-item">Decision Making</div>
+                <div class="soft-skill-item">Time Management</div>
+                <div class="soft-skill-item">Problem Solving</div>
+                <div class="soft-skill-item">Communication</div>
+                <div class="soft-skill-item">Presentation</div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contact">
+        <h3>Let's Connect!</h3>
+        <p>I'm actively seeking opportunities in Web Development and Software Development</p>
+        <p>📧 <a href="mailto:aminamhrasy@gmail.com">aminamhrasy@gmail.com</a></p>
+        <p>📱 8606775158</p>
+        <p>📍 Kollam, Kerala, India</p>
+        <div class="contact-links" style="margin-top: 30px;">
+            <a href="https://www.linkedin.com/in/aminaa4722" target="_blank">LinkedIn Profile</a>
+            <a href="https://github.com/AminaAyham" target="_blank">GitHub Profile</a>
+        </div>
+        <p style="margin-top: 40px; opacity: 0.7;">© 2025 Amina A. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all major elements
+        document.querySelectorAll('.skill-category, .project-card, .education-item, .cert-card, .soft-skill-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Active navigation highlight
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.color = '#1e3a8a';
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.color = '#3b82f6';
+                }
+            });
+        });
+
+        // Typing effect for title
+        const titleText = document.querySelector('.title-line');
+        const originalText = titleText.textContent;
+        titleText.textContent = '';
+        let charIndex = 0;
+
+        function typeText() {
+            if (charIndex < originalText.length) {
+                titleText.textContent += originalText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, 100);
+            }
+        }
+
+        // Start typing after a short delay
+        setTimeout(typeText, 500);
+
+        // Add click counter to profile image (Easter egg)
+        let clickCount = 0;
+        document.getElementById('profileImage').addEventListener('click', () => {
+            clickCount++;
+            if (clickCount === 5) {
+                alert('🎉 Thanks for visiting my portfolio!');
+                clickCount = 0;
+            }
+        });
+    </script>
+</body>
+</html>
