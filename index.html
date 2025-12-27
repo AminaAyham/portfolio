@@ -3,108 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio - Amina Ayham</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-        header p {
-            font-size: 1.2rem;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        .section {
-            margin: 3rem 0;
-        }
-        .section h2 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-size: 2rem;
-        }
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .project-card {
-            background: #f4f4f4;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .project-card h3 {
-            color: #764ba2;
-            margin-bottom: 0.5rem;
-        }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-    </style>
+    <title>Amina A - Web Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Amina Ayham</h1>
-        <p>Web Developer | Designer | Creator</p>
+        <div class="header-content">
+            <div class="profile-section">
+                <div class="profile-image-container">
+                    <img src="image.jpg" alt="Amina A" class="profile-image" id="profileImage">
+                </div>
+                <div class="profile-text">
+                    <h1>AMINA A</h1>
+                    <p class="title-line">MCA Graduate | Web Developer</p>
+                    <p class="subtitle">Python & Django Enthusiast | Building Responsive Web Applications</p>
+                </div>
+            </div>
+            <div class="contact-links">
+                <a href="mailto:aminamhrasy@gmail.com">📧 Email</a>
+                <a href="https://www.linkedin.com/in/aminaa4722" target="_blank">💼 LinkedIn</a>
+                <a href="https://github.com/AminaAyham" target="_blank">💻 GitHub</a>
+                <a href="tel:8606775158">📱 Call Me</a>
+            </div>
+        </div>
     </header>
 
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
-        <section class="section">
-            <h2>About Me</h2>
-            <p>Welcome to my portfolio! I'm a passionate developer creating amazing web experiences.</p>
+        <section id="about">
+            <h2>Professional Summary</h2>
+            <div class="summary">
+                Motivated and detail-oriented MCA graduate with strong foundations in web development and programming. Experienced in Python, Django, Java, and SQL through academic projects and self-learning. Passionate about designing responsive web applications, continuously improving technical skills and teaching others technical concepts. Seeking a Web Developer or Software Developer role to contribute to innovative development teams.
+            </div>
         </section>
 
-        <section class="section">
-            <h2>Projects</h2>
-            <div class="projects">
-                <div class="project-card">
-                    <h3>Project 1</h3>
-                    <p>Description of your first project goes here.</p>
+        <section id="skills">
+            <h2>Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Web Development</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Django</li>
+                        <li>HTML & CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
                 </div>
-                <div class="project-card">
-                    <h3>Project 2</h3>
-                    <p>Description of your second project goes here.</p>
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C</li>
+                        <li>C++</li>
+                    </ul>
                 </div>
-                <div class="project-card">
-                    <h3>Project 3</h3>
-                    <p>Description of your third project goes here.</p>
+                <div class="skill-category">
+                    <h3>Databases</h3>
+                    <ul>
+                        <li>MySQL</li>
+                        <li>SQLite</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Frameworks</h3>
+                    <ul>
+                        <li>Git</li>
+                        <li>Bootstrap</li>
+                        <li>VS Code</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <h2>Contact</h2>
-            <p>Email: your.email@example.com</p>
-            <p>GitHub: github.com/AminaAyham</p>
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Child Care Management System</h3>
+                    <p class="project-year">2025</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">SQLite</span>
+                        <span class="tech-tag">HTML/CSS</span>
+                    </div>
+                    <ul>
+                        <li>Developed and deployed a web application for tracking child vaccinations and developmental milestones</li>
+                        <li>Implemented online telehealth conference and environmental study features</li>
+                        <li>Designed dynamic user interfaces using HTML/CSS</li>
+                        <li>Integrated email alert system for vaccination reminders using Django's mail framework</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <h3>Public Utility Civil Registry System</h3>
+                    <p class="project-year">2017</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">HTML/CSS</span>
+                    </div>
+                    <ul>
+                        <li>Built a comprehensive registry platform to manage birth, death, and marriage records</li>
+                        <li>Implemented secure database management for sensitive public records</li>
+                        <li>Created user-friendly interfaces for data entry and retrieval</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Academic Background</h2>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <h3>Master of Computer Applications (MCA)</h3>
+                    <p><strong>University of Kerala</strong></p>
+                    <p>2025 | 65%</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>Bachelor of Computer Applications (BCA)</h3>
+                    <p><strong>University of Kerala</strong></p>
+                    <p>2017 | 63.4%</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>Higher Secondary Education (Computer Science)</h3>
+                    <p><strong>Government of Kerala</strong></p>
+                    <p>2014 | 60%</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Professional Certifications</h2>
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <h3>C++ Fundamentals</h3>
+                    <p>Infosys Springboard</p>
+                    <p><em>December 2023</em></p>
+                </div>
+
+                <div class="cert-card">
+                    <h3>HTML Advanced</h3>
+                    <p>Infosys Springboard</p>
+                    <p><em>December 2023</em></p>
+                </div>
+
+                <div class="cert-card">
+                    <h3>Learn Java to Master</h3>
+                    <p>Udemy</p>
+                    <p><em>March 2024</em></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="soft-skills">
+            <h2>Core Competencies</h2>
+            <div class="soft-skills-grid">
+                <div class="soft-skill-item">Teamwork</div>
+                <div class="soft-skill-item">Critical Thinking</div>
+                <div class="soft-skill-item">Teaching & Mentoring</div>
+                <div class="soft-skill-item">Decision Making</div>
+                <div class="soft-skill-item">Time Management</div>
+                <div class="soft-skill-item">Problem Solving</div>
+                <div class="soft-skill-item">Communication</div>
+                <div class="soft-skill-item">Presentation</div>
+            </div>
         </section>
     </div>
 
-    <footer>
-        <p>&copy; 2025 Amina Ayham. All rights reserved.</p>
+    <footer id="contact">
+        <h3>Let's Connect!</h3>
+        <p>I'm actively seeking opportunities in Web Development and Software Development</p>
+        <p>📧 <a href="mailto:aminamhrasy@gmail.com">aminamhrasy@gmail.com</a></p>
+        <p>📱 8606775158</p>
+        <p>📍 Kollam, Kerala, India</p>
+        <div class="contact-links" style="margin-top: 30px;">
+            <a href="https://www.linkedin.com/in/aminaa4722" target="_blank">LinkedIn Profile</a>
+            <a href="https://github.com/AminaAyham" target="_blank">GitHub Profile</a>
+        </div>
+        <p style="margin-top: 40px; opacity: 0.7;">© 2025 Amina A. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all major elements
+        document.querySelectorAll('.skill-category, .project-card, .education-item, .cert-card, .soft-skill-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Active navigation highlight
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.color = '#1e3a8a';
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.color = '#3b82f6';
+                }
+            });
+        });
+
+        // Typing effect for title
+        const titleText = document.querySelector('.title-line');
+        const originalText = titleText.textContent;
+        titleText.textContent = '';
+        let charIndex = 0;
+
+        function typeText() {
+            if (charIndex < originalText.length) {
+                titleText.textContent += originalText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, 100);
+            }
+        }
+
+        // Start typing after a short delay
+        setTimeout(typeText, 500);
+
+        // Add click counter to profile image (Easter egg)
+        let clickCount = 0;
+        document.getElementById('profileImage').addEventListener('click', () => {
+            clickCount++;
+            if (clickCount === 5) {
+                alert('🎉 Thanks for visiting my portfolio!');
+                clickCount = 0;
+            }
+        });
+    </script>
 </body>
 </html>
